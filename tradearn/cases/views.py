@@ -2,14 +2,14 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from . import models, serializers
-from push_notifications.models import GCMDevice
+# from push_notifications.models import GCMDevice
 
 class ListAllCases(APIView):
 
     def get(self, request, format=None):
 
-        device = GCMDevice.objects.get(registration_id='c4ArjjbVD5Y:APA91bGAnX_6kZ-w7txOm6w2YEBjlSwFno79PO6FES2BuDk9G4NgYAXM2Y-t6qA9ptEqgxVDUpKMxGlBwK7qKbZsl_CPVAjc_SUw0oyLKp95zgRIsYcApFBU-C95kgvJ1Ykr6eoZlK3i')
-        print(device)
+        # device = GCMDevice.objects.get(registration_id='c4ArjjbVD5Y:APA91bGAnX_6kZ-w7txOm6w2YEBjlSwFno79PO6FES2BuDk9G4NgYAXM2Y-t6qA9ptEqgxVDUpKMxGlBwK7qKbZsl_CPVAjc_SUw0oyLKp95zgRIsYcApFBU-C95kgvJ1Ykr6eoZlK3i')
+        # print(device)
         # device.send_message(None, extra={"foo": "bar"})
 
         user = request.user

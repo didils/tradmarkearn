@@ -77,14 +77,14 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "tradearn.users.apps.UsersAppConfig",
     'tradearn.coupons.apps.CouponsConfig',
-    # 'tradearn.OAreports.apps.OareportsConfig',
-    # 'tradearn.searchreports.apps.SearchreportsConfig',
-    # 'tradearn.applicants.apps.ApplicantsConfig',
-    # 'tradearn.questions.apps.QuestionsConfig',
+    'tradearn.OAreports.apps.OareportsConfig',
+    'tradearn.searchreports.apps.SearchreportsConfig',
+    'tradearn.applicants.apps.ApplicantsConfig',
+    'tradearn.questions.apps.QuestionsConfig',
     'tradearn.cases.apps.CasesConfig',
-    # 'tradearn.caseFiles.apps.CasefilesConfig',
+    'tradearn.casefiles.apps.CasefilesConfig',
     'tradearn.products.apps.ProductsConfig',
-    # 'tradearn.point_histories.apps.PointHistoriesConfig',
+    'tradearn.point_histories.apps.PointHistoriesConfig',
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -259,3 +259,11 @@ REST_FRAMEWORK = {
 }
 
 REST_USE_JWT = True
+
+JWT_AUTH = {
+    'JWT_VERIFY_EXPIRATION': False
+}
+
+REST_AUTH_SERIALIZERS = {
+    'USER_DETAILS_SERIALIZER': 'tradearn.users.serializers.ListUserSerializer'
+}
