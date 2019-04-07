@@ -7,10 +7,32 @@ from django.http import HttpRequest
 
 
 class AccountAdapter(DefaultAccountAdapter):
+
     def is_open_for_signup(self, request: HttpRequest):
         return getattr(settings, "ACCOUNT_ALLOW_REGISTRATION", True)
 
+    def save_user(self, request, user, form):
+        if len(user.socialaccount_set.all()) == 0:
+            name = request.data.get('name', None)
+            email = request.data.get('email', None)
+            username = request.data.get('username', None)
+            social_id = request.data.get('social_id', None)
+            phone = request.data.get('phone', None)
+            fcm_pushtoken = request.data.get('fcm_pushtoken', None)
+            password1 = request.data.get('password1', None)
+            password2 = request.data.get('password2', None)
+            user.name = name
+            user.email = email
+            user.username = username
+            user.phone = phone
+            user.social_id = social_id
+            user.fcm_pushtoken = fcm_pushtoken
+            if(password1 == password2):
+                user.set_password(password1)
+            user.save()
+
 
 class SocialAccountAdapter(DefaultSocialAccountAdapter):
+
     def is_open_for_signup(self, request: HttpRequest, sociallogin: Any):
         return getattr(settings, "ACCOUNT_ALLOW_REGISTRATION", True)
