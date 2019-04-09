@@ -212,23 +212,4 @@ LOGGING = {
 }
 
 # Your stuff...
-# ------------------------------------------------------------------------------
-
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-    ),
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
-    ),
-}
-
-REST_USE_JWT = True
-
-JWT_AUTH = {
-    'JWT_VERIFY_EXPIRATION': False
-}
-
-REST_AUTH_SERIALIZERS = {
-    'USER_DETAILS_SERIALIZER': 'tradearn.users.serializers.ListUserSerializer'
-}
+# -----------------------------------------------------------------------------
