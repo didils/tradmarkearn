@@ -48,6 +48,7 @@ class CaseSerializer(serializers.ModelSerializer):
             'examiner_team',
             'waiting_order',
             'waiting_total',
+            'exam_result_date'
         )
 
 class CaseUploadSerializer(serializers.ModelSerializer):
