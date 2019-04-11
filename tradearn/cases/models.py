@@ -48,7 +48,7 @@ class Case(models.Model):
     paymentArray = models.TextField(blank=True, null=True)
     descriptions = models.TextField(blank=True, null=True)
     progress_status = models.CharField(max_length=80, choices=STATUS_CHOICES, blank=True, null=True)
-
+    exam_result_date = models.DateField(null=True, blank=True)
     expected_date = models.DateField(null=True, blank=True)
     examiner_name = models.CharField(max_length=80, blank=True, null=True)
     examiner_phone = models.CharField(max_length=80, blank=True, null=True)
