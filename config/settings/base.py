@@ -72,7 +72,8 @@ THIRD_PARTY_APPS = [
     'rest_framework.authtoken',
     'rest_auth',
     'rest_auth.registration',
-    'imagekit'
+    'imagekit',
+    "fcm_django"
 ]
 LOCAL_APPS = [
     "tradearn.users.apps.UsersAppConfig",
@@ -248,6 +249,17 @@ SOCIALACCOUNT_ADAPTER = "tradearn.users.adapters.SocialAccountAdapter"
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+FCM_DJANGO_SETTINGS = {
+        "FCM_SERVER_KEY": "AAAAl0dOI9Y:APA91bEJCJ-qFe_Qm0tCTRLAYyh2MJ-hAnC7qSeFLoHbakURbpG7e_esd6Af5Ly_qovy8EeYoGamS7y5W0qH8qhwGoBJXs7ezeO_h9NwxKCKIpNv1O_gkZLhUn0Ne7rcnil8LBOgXv0E",
+         # true if you want to have only one active device per registered user at a time
+         # default: False
+        "ONE_DEVICE_PER_USER": False,
+         # devices to which notifications cannot be sent,
+         # are deleted upon receiving error response from FCM
+         # default: False
+        "DELETE_INACTIVE_DEVICES": False,
+}
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
