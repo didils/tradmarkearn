@@ -73,7 +73,7 @@ THIRD_PARTY_APPS = [
     'rest_auth',
     'rest_auth.registration',
     'imagekit',
-    "fcm_django"
+    "fcm_django",
 ]
 LOCAL_APPS = [
     "tradearn.users.apps.UsersAppConfig",
